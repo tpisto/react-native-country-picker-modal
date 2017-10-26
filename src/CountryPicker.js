@@ -91,12 +91,14 @@ export default class CountryPicker extends Component {
   }
 
   static renderFlag(cca2, itemStyle, emojiStyle, imageStyle) {
+    let imageFlag = null;
+    if (isEmojiable === true) {
+      imageFlag = CountryPicker.renderEmojiFlag(cca2, emojiStyle);
+    } else {
+      imageFlag = CountryPicker.renderImageFlag(cca2, imageStyle);
+    }
     return (
-      <View style={[styles.itemCountryFlag, itemStyle]}>
-        {isEmojiable
-          ? CountryPicker.renderEmojiFlag(cca2, emojiStyle)
-          : CountryPicker.renderImageFlag(cca2, imageStyle)}
-      </View>
+      <View style={[styles.itemCountryFlag, itemStyle]}>{imageFlag}</View>
     )
   }
 
@@ -315,7 +317,7 @@ export default class CountryPicker extends Component {
           {this.props.children ? (
             this.props.children
           ) : (
-            <View style={styles.touchFlag}>
+            <View style={[styles.touchFlag, {marginTop: isEmojiable ? 0 : 5}]}>
               {CountryPicker.renderFlag(this.props.cca2)}
             </View>
           )}
