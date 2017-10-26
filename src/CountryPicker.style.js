@@ -48,7 +48,7 @@ export default StyleSheet.create({
   },
   itemCountry: {
     flexDirection: 'row',
-    height: '7%',
+    height: 48,
     justifyContent: 'flex-start',
     alignItems: 'center'
   },
@@ -63,7 +63,7 @@ export default StyleSheet.create({
     width: '70%',
     borderBottomWidth: 2 / PixelRatio.get(),
     borderBottomColor: '#ccc',
-    height: '7%'
+    height: 48,
   },
   countryName: {
     fontSize: getHeightPercent(2.2)
@@ -78,8 +78,8 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   letter: {
-    height: '3.3%',
-    width: '4%',
+    height: 25,
+    width: 20,
     justifyContent: 'center',
     alignItems: 'center'
   },
